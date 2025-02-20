@@ -53,3 +53,15 @@ y_pred_rf = rf_model.predict(X_test)
 print("Random Forest Accuracy:", accuracy_score(y_test, y_pred_rf))
 
 # SVM
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
+
+# Apply SVM with a non-linear kernel (RBF - Radial Basis Function)
+svm_model = SVC(kernel='rbf')  # You can also try 'poly' or other kernels
+svm_model.fit(X_train, y_train)
+
+# Predictions
+y_pred_svm = svm_model.predict(X_test)
+
+# Evaluate the model
+print("SVM with Kernel Accuracy:", accuracy_score(y_test, y_pred_svm))
